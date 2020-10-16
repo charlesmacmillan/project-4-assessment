@@ -4,10 +4,9 @@ import './Circles.css';
 const Circles = props => {
     return (
         <div className="Circles">
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
-            <div>4</div>
+            {props.circles.map((circle, i) => 
+                <div className={props.current === i ? "selected" : ""} key={i}>{circle}</div>
+            )}
         </div>
     )
 }

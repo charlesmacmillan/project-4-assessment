@@ -4,10 +4,9 @@ import './CircleSelector.css';
 const CircleSelector = props => {
     return (
         <div className="CircleSelector">
-            <button>Select Circle 1</button>
-            <button>Select Circle 2</button>
-            <button>Select Circle 3</button>
-            <button>Select Circle 4</button>
+            {props.circles.map((circle, i) => 
+                <button onClick={() => props.update(i)} className={props.current === i ? "selected" : ""} key={i}>select circle {circle}</button>
+            )}
         </div>
     )
 }
